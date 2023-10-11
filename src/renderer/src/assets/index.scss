@@ -1,0 +1,145 @@
+@use 'colors';
+
+html {
+  height: 100%;
+}
+body {
+  font-family:
+    Roboto,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Open Sans',
+    sans-serif;
+  color: rgb(49, 44, 55);
+  background-color: rgb(250, 251, 251);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main#root {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+// @media (max-width: 660px) {
+//   .features .feature-item {
+//     width: 50%;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .links {
+//     flex-direction: column;
+//     line-height: 32px;
+//   }
+
+//   .links .link-dot {
+//     display: none;
+//   }
+
+//   .features .feature-item {
+//     width: 100%;
+//   }
+// }
+
+.container .screen {
+  transition: all 0.2s ease-in;
+}
+
+.show-anim {
+  width: 100%;
+}
+
+.hide-anim {
+  width: 0%;
+}
+
+#square {
+  .collection {
+    margin-top: 10px;
+    .first-item {
+      background-color: colors.$color-darken-3;
+      color: cornsilk;
+    }
+  }
+
+  .topic-card.collection-item {
+    padding: '0px';
+    margin: '10px 3px';
+    font-size: 24;
+    background-color: 'inherit';
+  }
+  .secondary-content {
+    min-width: 60%;
+    color: colors.$complementary-color;
+    border-left: 1px solid colors.$complementary-color;
+    padding-left: 10px;
+  }
+}
+#chatroom {
+  .chat {
+    display: flex;
+    flex-direction: column;
+  }
+  .chatsection {
+    flex: 8;
+  }
+  .editmessage {
+    flex: 2;
+    min-height: 100px;
+  }
+
+  .topicside {
+    background-color: #86a5b1;
+    text-align: left;
+    color: beige;
+  }
+}
+
+footer {
+  margin-top: auto;
+  padding-bottom: 10px;
+  .nav-wrapper ul {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+  }
+}
+.nav-wrapper {
+  li {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: colors.$primary-color;
+    border-left: 1px solid colors.$primary-color;
+    &:first-child {
+      border-left: 0px;
+    }
+    &.active {
+      color: colors.$color-darken-4;
+    }
+    .breadcrumb::before {
+      color: inherit;
+    }
+  }
+}

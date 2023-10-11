@@ -1,0 +1,26 @@
+@use 'sass:color';
+@use 'sass:math';
+
+$background-color: rgb(251, 251, 251);
+$default-font-color: rgb(50, 40, 55);
+
+$primary-color: rgb(73, 88, 224);
+$complementary-color: #01839d;
+
+@function darkenBlue($color, $scale) {
+  @return color.scale($color, $red: -$scale, $green: -$scale, $blue: math.div(-$scale, 2));
+}
+
+@function lightenBlue($color, $scale) {
+  @return color.scale($color, $red: $scale, $green: $scale, $blue: math.min(100%, $scale * 1.2));
+}
+
+$color-darken-1: darkenBlue($primary-color, 20%);
+$color-darken-2: darkenBlue($primary-color, 40%);
+$color-darken-3: darkenBlue($primary-color, 60%);
+$color-darken-4: darkenBlue($primary-color, 80%);
+
+$color-lighten-1: lightenBlue($primary-color, 20%);
+$color-lighten-2: lightenBlue($primary-color, 40%);
+$color-lighten-3: lightenBlue($primary-color, 60%);
+$color-lighten-4: lightenBlue($primary-color, 80%);
