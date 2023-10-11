@@ -1,6 +1,7 @@
+html {
+  height: 100%;
+}
 body {
-  display: flex;
-  flex-direction: column;
   font-family:
     Roboto,
     -apple-system,
@@ -12,10 +13,24 @@ body {
     'Cantarell',
     'Open Sans',
     sans-serif;
-  color: #86a5b1;
-  background-color: #2f3241;
+  color: rgb(49, 44, 55);
+  background-color: rgb(250, 251, 251);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+main {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+}
 * {
   padding: 0;
   margin: 0;
@@ -53,22 +68,13 @@ a:hover {
   border-bottom: 1px solid;
 }
 
-.container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 15px 30px 0 30px;
-}
-
 .versions {
   margin: 0 auto;
   float: none;
   clear: both;
   overflow: hidden;
   font-family: 'Menlo', 'Lucida Console', monospace;
-  color: #c2f5ff;
+  color: #01839d;
   line-height: 1;
   transition: all 0.3s;
 }
@@ -76,7 +82,7 @@ a:hover {
 .versions li {
   display: block;
   float: left;
-  border-right: 1px solid rgba(194, 245, 255, 0.4);
+  border-right: 1px solid rgba(0, 61, 74, 0.4);
   padding: 0 20px;
   font-size: 13px;
   opacity: 0.8;
@@ -202,4 +208,76 @@ a:hover {
   .features .feature-item {
     width: 100%;
   }
+}
+
+.container .screen {
+  transition: all 0.2s ease-in;
+}
+
+.show-anim {
+  width: 100%;
+}
+
+.hide-anim {
+  width: 0%;
+}
+#square .collection {
+  margin-top: 10px;
+}
+#square .topic-card .collection-item {
+  border: 1px solid #86a5b1;
+  padding: '0px';
+  margin: '10px 3px';
+  font-size: 24;
+  background-color: 'inherit';
+}
+#square .collection .first-item {
+  background-color: #013d48;
+  color: cornsilk;
+}
+#square .secondary-content {
+  min-width: 60%;
+  border-left: 1px solid #01839d;
+  padding-left: 10px;
+}
+#chatroom .chat {
+  display: flex;
+  flex-direction: column;
+}
+#chatroom .chatsection {
+  flex: 8;
+}
+#chatroom .editmessage {
+  flex: 2;
+  min-height: 100px;
+}
+
+#chatroom .topicside {
+  background-color: #86a5b1;
+  text-align: left;
+  color: beige;
+}
+footer .nav-wrapper ul {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  color: rgb(221, 221, 221);
+  background-color: #024452;
+}
+
+.nav-wrapper li {
+  flex: 1;
+  text-align: center;
+  font-size: 25px;
+}
+.nav-wrapper li.breadcrumb {
+  max-width: 30px;
+}
+.nav-wrapper li.breadcrumb::before {
+  color: inherit;
+}
+
+footer {
+  margin-top: auto;
+  padding-bottom: 10px;
 }
