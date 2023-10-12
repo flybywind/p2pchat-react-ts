@@ -1,4 +1,17 @@
+@charset "utf-8";
+
 @use 'colors';
+
+// Import only what you need from Bulma
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/base/_all.sass';
+// @import 'bulma/sass/elements/button.sass';
+// @import 'bulma/sass/elements/container.sass';
+@import 'bulma/sass/elements/title.sass';
+// @import 'bulma/sass/form/_all.sass';
+@import 'bulma/sass/components/navbar.sass';
+// @import 'bulma/sass/layout/hero.sass';
+@import 'bulma/sass/layout/section.sass';
 
 html {
   height: 100%;
@@ -97,16 +110,21 @@ ul {
   }
 }
 #chatroom {
-  .chat {
+  flex: 1;
+  .chat-window {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 2px solid;
+    height: 100%;
   }
   .chatsection {
     flex: 8;
   }
   .editmessage {
+    margin-top: auto;
     flex: 2;
-    min-height: 100px;
   }
 
   .topicside {

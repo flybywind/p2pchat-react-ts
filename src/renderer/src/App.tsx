@@ -1,4 +1,3 @@
-import Versions from './components/Versions'
 import Nav from './components/Nav'
 import TopicCard from './components/TopicCard'
 import { useState } from 'react'
@@ -40,10 +39,12 @@ function App(): JSX.Element {
                 <li>topic1</li>
               </ul>
             </div>
-            <div className="chat col s8">
-              <div className="chatsection"></div>
+            <div className="chat-window col s8">
+              <div className="chatsection">
+                <p>Hello</p>
+              </div>
               <div className="editmessage">
-                <textarea name="messagebox" id="messagebox" cols="30" rows="2"></textarea>
+                <textarea name="messagebox" id="messagebox" cols={30} rows={2}></textarea>
               </div>
             </div>
           </div>
@@ -51,7 +52,6 @@ function App(): JSX.Element {
       </div>
       <footer>
         <Nav onclick={activeScreen}></Nav>
-        {/* <Versions></Versions> */}
       </footer>
     </>
   )
