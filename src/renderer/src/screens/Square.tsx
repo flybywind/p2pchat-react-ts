@@ -1,4 +1,5 @@
 import TopicCard from '@renderer/components/TopicCard'
+import { Screen } from '@renderer/const'
 
 interface Props {
   onActive: (s: string) => void
@@ -7,7 +8,7 @@ interface Props {
 export default function SquareScreen({ onActive }: Props): JSX.Element {
   // todo: load topics from DHT
   return (
-    <div id="square" className={'screen box ' + onActive('square')}>
+    <div id="square" className={'screen box ' + onActive(Screen.Square)}>
       <nav className="navbar is-link" role="navigation" aria-label="navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="/square">

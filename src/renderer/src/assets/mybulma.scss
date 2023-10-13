@@ -23,8 +23,14 @@ body,
 main {
   height: 100%;
 }
+main {
+  display: flex;
+  align-items: stretch;
+}
 .screen {
-  overflow-y: scroll;
+  &#square {
+    overflow-y: scroll;
+  }
   max-height: 90%;
 }
 // Import only what you need from Bulma
@@ -43,6 +49,25 @@ main {
 @import 'bulma/sass/form/_all.sass';
 @import 'bulma/sass/helpers/_all.sass';
 
+#chatroom {
+  display: flex;
+  flex: 1;
+  div {
+    display: flex;
+    border: 1px solid;
+  }
+  .box {
+    flex: 1;
+    overflow-y: hidden;
+  }
+  .side-topic-list {
+    flex: 1;
+    overflow-y: scroll;
+  }
+  .chat-area {
+    flex: 1;
+  }
+}
 footer {
   position: absolute;
   bottom: 0;

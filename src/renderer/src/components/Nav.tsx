@@ -1,3 +1,4 @@
+import { Screen } from '@renderer/const'
 import { preventDefault } from '@renderer/event/eventFunc'
 import { useState } from 'react'
 interface Props {
@@ -5,14 +6,13 @@ interface Props {
 }
 
 export default function Nav({ onclick }: Props): JSX.Element {
-  const [activeIcon, setActiveIcon] = useState('square')
+  const [activeIcon, setActiveIcon] = useState(Screen.Square)
 
-  function clickHandler(s: string) {
+  function clickHandler(s: Screen) {
     onclick(s)
-    console.log('set screen =', s)
     setActiveIcon(s)
   }
-  function activeClass(a: string) {
+  function activeClass(a: Screen) {
     return activeIcon === a ? 'is-active is-warning' : 'is-outlined'
   }
 
@@ -23,22 +23,22 @@ export default function Nav({ onclick }: Props): JSX.Element {
       <div className="column is-6 is-offset-3">
         <div className="columns is-mobile">
           <div
-            onClick={(e) => preventDefault(e, clickHandler, 'square')}
+            onClick={(e) => preventDefault(e, clickHandler, Screen.Square)}
             className={'column ' + navItemCol}
           >
-            <div className={'button is-info ' + activeClass('square')}>
+            <div className={'button is-info ' + activeClass(Screen.Square)}>
               <div className="fa-user-group"></div>
-              <div>Square</div>
+              <div>{Screen.Square}</div>
             </div>
           </div>
 
           <div
             className={'column ' + navItemCol}
-            onClick={(e) => preventDefault(e, clickHandler, 'chatroom')}
+            onClick={(e) => preventDefault(e, clickHandler, Screen.Chatroom)}
           >
-            <div className={'button is-info ' + activeClass('chatroom')}>
+            <div className={'button is-info ' + activeClass(Screen.Chatroom)}>
               <div className="fa-comment-dots"> </div>
-              <div>ChatRoom</div>
+              <div>{Screen.Chatroom}</div>
             </div>
           </div>
         </div>

@@ -1,25 +1,60 @@
+import { Screen } from '@renderer/const'
+
 interface Props {
   onActive: (s: string) => void
 }
 export default function ChatScreen({ onActive }: Props): JSX.Element {
   return (
-    <div id="chatroom" className={'screen box ' + onActive('chatroom')}>
-      <div className="row">
-        <div className="topicside col s4">
+    <div id="chatroom" className={'screen box ' + onActive(Screen.Chatroom)}>
+      <div className="box has-background-warning">
+        <div className="side-topic-list">
           <ul>
-            <li>topic1</li>
-            <li>topic1</li>
-            <li>topic1</li>
-            <li>topic1</li>
+            {/* <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li>
+            <li>topic list</li> */}
+            <li>topic list</li>
+            <li>topic list</li>
           </ul>
         </div>
-        <div className="chat-window col s8">
-          <div className="chatsection">
-            <p>Hello</p>
-          </div>
-          <div className="editmessage">
-            <textarea name="messagebox" id="messagebox" cols={30} rows={2}></textarea>
-          </div>
+        <div className="chat-area">
+          <header className="has-background-info">
+            <p>
+              topic name @<i>topic-id-123</i>
+            </p>
+            <p>topic description</p>
+          </header>
+          <article className="sentence media">
+            <span className="fa-solid fa-face"></span>
+            <div className="median-content">hello, my name is xxx</div>
+          </article>
         </div>
       </div>
     </div>
