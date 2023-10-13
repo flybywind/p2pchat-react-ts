@@ -9,50 +9,40 @@ export default function Nav({ onclick }: Props): JSX.Element {
 
   function clickHandler(s: string) {
     onclick(s)
+    console.log('set screen =', s)
     setActiveIcon(s)
   }
   function activeClass(a: string) {
-    return activeIcon === a
-      ? {
-          active: 'active',
-          icon: 'sharp'
-        }
-      : {
-          active: '',
-          icon: 'outlined'
-        }
+    return activeIcon === a ? 'is-active is-warning' : 'is-outlined'
   }
+
+  const navItemNum = 2
+  const navItemCol = `is-${12 / navItemNum}`
   return (
-    <>
-      <div className="divider" style={{ marginBottom: '10px' }}></div>
-      <div className="nav-wrapper row">
-        <div className="col s3"></div>
-        <ul className="s6">
-          <li
+    <div className="mynav columns is-mobile">
+      <div className="column is-6 is-offset-3">
+        <div className="columns is-mobile">
+          <div
             onClick={(e) => preventDefault(e, clickHandler, 'square')}
-            className={activeClass('square').active}
+            className={'column ' + navItemCol}
           >
-            <div>
-              <i className={'material-icons-' + activeClass('square').icon}>topic</i>
+            <div className={'button is-info ' + activeClass('square')}>
+              <div className="fa-user-group"></div>
+              <div>Square</div>
             </div>
-            <div>
-              <span>Square</span>
-            </div>
-          </li>
-          <li
-            className={activeClass('chatroom').active}
+          </div>
+
+          <div
+            className={'column ' + navItemCol}
             onClick={(e) => preventDefault(e, clickHandler, 'chatroom')}
           >
-            <div>
-              <i className={'material-icons-' + activeClass('chatroom').icon}>chat</i>
+            <div className={'button is-info ' + activeClass('chatroom')}>
+              <div className="fa-comment-dots"> </div>
+              <div>ChatRoom</div>
             </div>
-            <div>
-              <span>ChatRoom</span>
-            </div>
-          </li>
-        </ul>
-        <div className="col s3"></div>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   )
 }

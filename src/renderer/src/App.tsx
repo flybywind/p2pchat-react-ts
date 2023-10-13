@@ -17,7 +17,7 @@ function App(): JSX.Element {
   return (
     <>
       <div id="square" className={'screen box ' + isActive('square')}>
-        <nav className="navbar is-link" role="navigation" aria-label="dropdown navigation">
+        <nav className="navbar is-link" role="navigation" aria-label="navigation">
           <div className="navbar-brand">
             <a className="navbar-item" href="/square">
               Square
@@ -27,21 +27,20 @@ function App(): JSX.Element {
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link">Location</a>
               <div className="navbar-dropdown">
-                <div className="navbar-item">&lt; 10km</div>
-                <div className="navbar-item">&lt; 100km</div>
-                <div className="navbar-item">&lt; 1000km</div>
-                <div className="navbar-item">global</div>
+                <a className="navbar-item">&lt; 10km</a>
+                <a className="navbar-item">&lt; 100km</a>
+                <a className="navbar-item">&lt; 1000km</a>
+                <a className="navbar-item">global</a>
               </div>
             </div>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
-              <input type="text" className="input" />
-              <button className="button">
-                <span className="icon is-small">
+              <input type="text" className="input is-median" />
+              <button className="button is-link ">
+                <span className="iconis-small">
                   <span className="fas fa-search" aria-hidden="true"></span>
                 </span>
-                <span>Search</span>
               </button>
             </div>
           </div>
