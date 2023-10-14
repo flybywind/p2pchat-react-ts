@@ -33,6 +33,7 @@ main {
   }
   max-height: 90%;
 }
+@import 'color_mixin.scss';
 // Import only what you need from Bulma
 @import 'bulma/sass/utilities/_all.sass';
 @import 'bulma/sass/base/_all.sass';
@@ -66,6 +67,52 @@ main {
   }
   .chat-area {
     flex: 1;
+    flex-direction: column;
+    header {
+      flex-basis: 0;
+      font-size: $size-5;
+      $bc: $success;
+      @include easyShadow(5px, $bc);
+      @include visibleBackground($bc);
+      min-height: 3em;
+      &:hover {
+        flex-basis: auto;
+        background-color: findDarkColor($bc);
+      }
+      h3 {
+        padding-left: $size-7;
+        font-size: medium;
+        padding-bottom: 0.1rem;
+        border-bottom: 1px solid $dark;
+      }
+      p {
+        padding-left: $size-7;
+        font-size: small;
+      }
+    }
+    .chat-history {
+      flex: 1;
+      overflow-y: scroll;
+    }
+    .edit-area {
+      padding-top: 2px;
+      background-color: $grey-lightest;
+      align-items: flex-end;
+      #edit-box {
+        flex: 1;
+        min-height: 2.5em;
+        margin-left: 2px;
+        border-radius: 5px;
+      }
+      button {
+        flex-basis: 0;
+        margin-left: 5px;
+        padding: 0.3em;
+        border-radius: 3px;
+        border-width: 0px;
+        @include visibleBackground($success);
+      }
+    }
   }
 }
 footer {

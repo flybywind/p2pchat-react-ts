@@ -1,0 +1,11 @@
+@use 'sass:math';
+@import 'bulma/sass/utilities/functions.sass';
+
+@mixin visibleBackground($background-color) {
+  background-color: $background-color;
+  color: findColorInvert($background-color);
+}
+
+@mixin easyShadow($size, $color) {
+  box-shadow: $size $size math.div($size, 2) $grey-light;
+}
