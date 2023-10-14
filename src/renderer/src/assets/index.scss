@@ -28,6 +28,7 @@ main {
   align-items: stretch;
 }
 .screen {
+  flex: 1;
   &#square {
     overflow-y: scroll;
   }
@@ -55,7 +56,7 @@ main {
   flex: 1;
   div {
     display: flex;
-    border: 1px solid;
+    // border: 1px solid;
   }
   .box {
     flex: 1;
@@ -70,6 +71,7 @@ main {
     flex-direction: column;
     header {
       flex-basis: 0;
+      margin-bottom: 10px;
       font-size: $size-5;
       $bc: $success;
       @include easyShadow(5px, $bc);
@@ -77,7 +79,6 @@ main {
       min-height: 3em;
       &:hover {
         flex-basis: auto;
-        background-color: findDarkColor($bc);
       }
       h3 {
         padding-left: $size-7;
@@ -92,7 +93,50 @@ main {
     }
     .chat-history {
       flex: 1;
+      flex-direction: column;
       overflow-y: scroll;
+      .chat-sentence {
+        margin-top: 5px;
+        section {
+          text-align: center;
+          @include visibleBackground($primary);
+          line-height: 1em;
+          padding: 5px;
+          z-index: 3;
+          max-height: 3em;
+          span {
+            display: block;
+          }
+        }
+        .triangle {
+          z-index: 2;
+          &.ltr {
+            @include triangle(8px, $primary, true);
+          }
+          &.rtl {
+            @include triangle(8px, $primary, false);
+          }
+          border-radius: 2px;
+          @include easyShadow(3px, $dark);
+        }
+        p {
+          z-index: 1;
+          color: $dark;
+          &.ltr {
+            text-align: left;
+          }
+          &.rtl {
+            text-align: right;
+          }
+          time {
+            display: block;
+            text-wrap: nowrap;
+            font-style: italic;
+            font-size: x-small;
+            color: $grey;
+          }
+        }
+      }
     }
     .edit-area {
       padding-top: 2px;

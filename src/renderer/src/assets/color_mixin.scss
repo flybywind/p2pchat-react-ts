@@ -3,9 +3,26 @@
 
 @mixin visibleBackground($background-color) {
   background-color: $background-color;
-  color: findColorInvert($background-color);
+  color: findColorInvert($background-color) !important;
 }
 
 @mixin easyShadow($size, $color) {
   box-shadow: $size $size math.div($size, 2) $grey-light;
+}
+
+@mixin triangle($size, $color, $at_left, $is_outlined: false) {
+  $half_size: math.div($size, 2);
+  padding: 0px $half_size;
+  @if $is_outlined {
+    border: 2px solid $color;
+  } @else {
+    border: 0;
+    background-color: $color;
+  }
+  height: $size;
+  @if $at_left {
+    transform: translate(-$half_size, 4px) rotate(45deg);
+  } @else {
+    transform: translate($half_size, 4px) rotate(45deg);
+  }
 }

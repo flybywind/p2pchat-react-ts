@@ -1,3 +1,4 @@
+import ChatSentence from '@renderer/components/ChatSentence'
 import { Screen } from '@renderer/const'
 
 interface Props {
@@ -47,7 +48,7 @@ export default function ChatScreen({ onActive }: Props): JSX.Element {
         <div className="chat-area">
           <header>
             <h3>
-              topic name @<code>topic-id-123</code>
+              topic name <code>@ topic-id-123</code>
             </h3>
             <p>
               topic description topic description topic description topic description topic
@@ -55,10 +56,12 @@ export default function ChatScreen({ onActive }: Props): JSX.Element {
             </p>
           </header>
           <div className="chat-history">
-            <div className="sentence">
-              <span className="fa-solid fa-face"></span>
-              <p>hello, my name is xxx</p>
-            </div>
+            <ChatSentence is_me={false} user_name={'john'} sentence={'hello Shane!'} />
+            <ChatSentence
+              is_me={true}
+              user_name={'shane'}
+              sentence={'hello John! Nice to meet u. It is a nice day, isnt it ?'}
+            />
           </div>
           <div className="edit-area">
             <textarea name="" id="edit-box" rows={1}></textarea>
