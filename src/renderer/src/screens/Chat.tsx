@@ -1,4 +1,5 @@
 import ChatSentence from '@renderer/components/ChatSentence'
+import TopicSection from '@renderer/components/TopicSection'
 import { Screen } from '@renderer/const'
 
 interface Props {
@@ -9,41 +10,8 @@ export default function ChatScreen({ onActive }: Props): JSX.Element {
     <div id="chatroom" className={'screen box ' + onActive(Screen.Chatroom)}>
       <div className="box">
         <div className="side-topic-list">
-          <ul>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-            <li>topic list</li>
-          </ul>
+          <TopicSection title="Mine" />
+          <TopicSection title="Others" />
         </div>
         <div className="chat-area">
           <header>

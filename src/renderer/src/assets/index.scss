@@ -1,6 +1,8 @@
 @charset "utf-8";
+@use 'sass:color';
 
-$blue: hsl(240, 90%, 68%);
+@import 'color_mixin.scss';
+
 $navbar-breakpoint: 480px;
 $family-sans-serif:
   BlinkMacSystemFont,
@@ -17,6 +19,7 @@ $family-sans-serif:
   'Arial',
   sans-serif,
   'FontAwesome';
+@import 'color_vars.scss';
 
 html,
 body,
@@ -34,7 +37,6 @@ main {
   }
   max-height: 90%;
 }
-@import 'color_mixin.scss';
 // Import only what you need from Bulma
 @import 'bulma/sass/utilities/_all.sass';
 @import 'bulma/sass/base/_all.sass';
@@ -64,7 +66,47 @@ main {
   }
   .side-topic-list {
     flex: 1;
+    flex-direction: column;
+    $side-color: color.scale($primary, $lightness: -80%);
+    @include visibleBackground($side-color);
+    background: linear-gradient(to right, $link, $side-color 3%, $side-color 97%, $link);
+    padding-left: 4%;
     overflow-y: scroll;
+    section {
+      z-index: 100;
+      .topic-category {
+        z-index: 100;
+        position: relative;
+        border-bottom: 1px solid $secondary;
+        font-weight: bold;
+        .arrow-down {
+          @include arrow($secondary);
+          position: absolute;
+          right: 10px;
+        }
+        &:hover {
+          cursor: pointer;
+          background-color: $grey-light;
+        }
+      }
+      ul {
+        z-index: 1;
+        margin-bottom: 1rem;
+        li {
+          z-index: 1;
+          margin-top: 2px;
+          padding-left: 1em;
+          &:hover {
+            background-color: color.scale($side-color, $lightness: 50%);
+            cursor: pointer;
+          }
+        }
+        &.slide-in {
+          max-height: 0px;
+          overflow: hidden;
+        }
+      }
+    }
   }
   .chat-area {
     flex: 1;
@@ -73,10 +115,11 @@ main {
       flex-basis: 0;
       margin-bottom: 10px;
       font-size: $size-5;
-      $bc: $success;
+      $bc: $highlight-positive;
       @include easyShadow(5px, $bc);
       @include visibleBackground($bc);
       min-height: 3em;
+      overflow: hidden;
       &:hover {
         flex-basis: auto;
       }
@@ -99,6 +142,7 @@ main {
         margin-top: 5px;
         section {
           text-align: center;
+          border-radius: 3px;
           @include visibleBackground($primary);
           line-height: 1em;
           padding: 5px;
@@ -147,6 +191,7 @@ main {
         min-height: 2.5em;
         margin-left: 2px;
         border-radius: 5px;
+        font-size: medium;
       }
       button {
         flex-basis: 0;

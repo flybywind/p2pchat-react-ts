@@ -1,0 +1,10 @@
+@use 'sass:color';
+@use 'sass:math';
+
+$primary: hsl(236, 68%, 41%); // main background, header, banner etc...
+$secondary: hsl(56, 76%, 69%); // inteactive color, like click, hover etc...
+$highlight-danger: hsl(354, 76%, 69%); // danger red
+$highlight-positive: hsl(146, 93%, 63%); // positive highlight
+$link: $primary;
+
+@import 'bulma/sass/utilities/_all.sass';
